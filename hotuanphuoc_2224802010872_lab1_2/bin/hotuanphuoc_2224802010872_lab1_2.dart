@@ -2,7 +2,7 @@ import 'dart:ffi';
 
 import 'package:hotuanphuoc_2224802010872_lab1_2/hotuanphuoc_2224802010872_lab1_2.dart' as hotuanphuoc_2224802010872_lab1_2;
 
-void main(List<String> arguments) {
+void main() {
   var name = 'Scirivas';
   int age = 20;
   double height = 5.9;

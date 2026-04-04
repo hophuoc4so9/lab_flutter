@@ -1,0 +1,4 @@
+[2026-04-04 14:01:18.405115 - errors] WARNING: ArgumentException: The first word of input must be a command
+[2026-04-04 14:15:46.635149 - errors] WARNING: No article found for title: 123123
+[2026-04-04 14:15:46.647052 - errors] WARNING: null
+[2026-04-04 14:15:46.647052 - errors] INFO: article: Read an article from Wikipedia
