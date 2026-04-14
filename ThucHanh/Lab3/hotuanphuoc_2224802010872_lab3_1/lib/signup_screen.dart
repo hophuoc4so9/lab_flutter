@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hotuanphuoc_2224802010872_lab3_1/api/api_service.dart';
-import 'package:hotuanphuoc_2224802010872_lab3_1/reset_password_sreen.dart';
-import 'package:hotuanphuoc_2224802010872_lab3_1/signup_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,37 +14,52 @@ class MyApp extends StatelessWidget {
       title: 'Lab 3 - form - login - dio - hotuanphuoc_2224802010872',
       theme: ThemeData(primarySwatch: Colors.blue),
       debugShowCheckedModeBanner: false,
-      home: const LoginScreen(),
+      home: const SignUpScreen(),
     );
   }
 }
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignUpScreenState extends State<SignUpScreen> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final usenameController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   final api = ApiService();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Login')),
+      appBar: AppBar(title: const Text('Reset Password')),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Form(
           key: _formKey,
           child: ListView(
             children: [
-              const Text('Login Screen'),
               const SizedBox(height: 40),
-              Image.asset("images/login.png", width: 100, height: 100),
+              Image.asset("images/sign-up.png", width: 100, height: 100),
+              const SizedBox(height: 20),
+              TextFormField(
+                controller: usenameController,
+                decoration: const InputDecoration(
+                  labelText: 'Username',
+                  border: OutlineInputBorder(),
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'The filed cannot be empty';
+                  }
+
+                  return null;
+                },
+              ),
               const SizedBox(height: 20),
               TextFormField(
                 controller: emailController,
@@ -88,7 +101,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ElevatedButton(
                 onPressed: () async {
                   if (_formKey.currentState!.validate()) {
-                    await api.send("login", {
+                    await api.send("sign-up", {
                       "email": emailController.text,
                       "password": passwordController.text,
                     });
@@ -97,35 +110,19 @@ class _LoginScreenState extends State<LoginScreen> {
                       context: context,
                       builder: (_) => const AlertDialog(
                         title: Text('Successfully'),
-                        content: Text('Authorization data hase been sent.'),
+                        content: Text('Đăng ký thành công'),
                       ),
                     );
                   }
                 },
-                child: const Text('Sign In'),
+                child: const Text('Sign up'),
               ),
               const SizedBox(height: 10),
               OutlinedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const SignUpScreen(),
-                    ),
-                  );
+                  Navigator.pop(context);
                 },
-                child: const Text('Sign Up'),
-              ),
-              TextButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const ResetPasswordScreen(),
-                    ),
-                  );
-                },
-                child: const Text('Forgot password?'),
+                child: const Text('Back'),
               ),
             ],
           ),
