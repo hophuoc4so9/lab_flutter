@@ -104,6 +104,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     await api.send("sign-up", {
                       "email": emailController.text,
                       "password": passwordController.text,
+                      "username": usenameController.text,
                     });
 
                     showDialog(
