@@ -28,13 +28,14 @@ class ResetPasswordScreen extends StatefulWidget {
 
 class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
   final emailController = TextEditingController();
+  final passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   final api = ApiService();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Registration')),
+      appBar: AppBar(title: const Text('reset password')),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Form(
@@ -61,19 +62,59 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
               ),
 
               const SizedBox(height: 20),
-
+              TextFormField(
+                controller: passwordController,
+                obscureText: true,
+                decoration: const InputDecoration(
+                  labelText: 'Password',
+                  border: OutlineInputBorder(),
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'The filed cannot be empty';
+                  }
+                  if (value.length < 7) {
+                    return 'The password must be at least 7 characters';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () async {
                   if (_formKey.currentState!.validate()) {
-                    await api.send("sign-up", {"email": emailController.text});
-
-                    showDialog(
-                      context: context,
-                      builder: (_) => const AlertDialog(
-                        title: Text('Successfully'),
-                        content: Text('Đã reset password'),
-                      ),
-                    );
+                    try {
+                      final res = await api.resetPassword(
+                        emailController.text,
+                        passwordController.text,
+                      );
+                      if (res.statusCode == 200) {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const AlertDialog(
+                            title: Text('Successfully'),
+                            content: Text('Thay đổi mật khẩu thành công.'),
+                          ),
+                        );
+                      } else {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const AlertDialog(
+                            title: Text('Error'),
+                            content: Text('Thay đổi mật khẩu thất bại.'),
+                          ),
+                        );
+                      }
+                    } catch (e) {
+                      showDialog(
+                        context: context,
+                        builder: (_) => AlertDialog(
+                          title: const Text('Error'),
+                          content: Text(e.toString()),
+                        ),
+                      );
+                      return;
+                    }
                   }
                 },
                 child: const Text('Reset Password'),

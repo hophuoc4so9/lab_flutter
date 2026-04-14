@@ -36,7 +36,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Reset Password')),
+      appBar: AppBar(title: const Text('Registration')),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Form(
@@ -101,19 +101,39 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ElevatedButton(
                 onPressed: () async {
                   if (_formKey.currentState!.validate()) {
-                    await api.send("sign-up", {
-                      "email": emailController.text,
-                      "password": passwordController.text,
-                      "username": usenameController.text,
-                    });
+                    try {
+                      final res = await api.signUp({
+                        "username": usenameController.text,
+                        "email": emailController.text,
+                        "password": passwordController.text,
+                      });
 
-                    showDialog(
-                      context: context,
-                      builder: (_) => const AlertDialog(
-                        title: Text('Successfully'),
-                        content: Text('Đăng ký thành công'),
-                      ),
-                    );
+                      if (res.statusCode == 201) {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const AlertDialog(
+                            title: Text('Successfully'),
+                            content: Text('Đăng ký thành công.'),
+                          ),
+                        );
+                      } else {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const AlertDialog(
+                            title: Text('Failed'),
+                            content: Text('Đăng ký thất bại'),
+                          ),
+                        );
+                      }
+                    } catch (e) {
+                      showDialog(
+                        context: context,
+                        builder: (_) => AlertDialog(
+                          title: const Text('Error'),
+                          content: Text('$e'),
+                        ),
+                      );
+                    }
                   }
                 },
                 child: const Text('Sign up'),

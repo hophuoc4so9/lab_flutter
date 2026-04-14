@@ -88,18 +88,38 @@ class _LoginScreenState extends State<LoginScreen> {
               ElevatedButton(
                 onPressed: () async {
                   if (_formKey.currentState!.validate()) {
-                    await api.send("login", {
-                      "email": emailController.text,
-                      "password": passwordController.text,
-                    });
+                    try {
+                      final res = await api.login(
+                        emailController.text,
+                        passwordController.text,
+                      );
 
-                    showDialog(
-                      context: context,
-                      builder: (_) => const AlertDialog(
-                        title: Text('Successfully'),
-                        content: Text('Authorization data hase been sent.'),
-                      ),
-                    );
+                      if (res.statusCode == 200) {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const AlertDialog(
+                            title: Text('Successfully'),
+                            content: Text('Login successfully.'),
+                          ),
+                        );
+                      } else {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const AlertDialog(
+                            title: Text('Failed'),
+                            content: Text('Invalid email or password.'),
+                          ),
+                        );
+                      }
+                    } catch (e) {
+                      showDialog(
+                        context: context,
+                        builder: (_) => AlertDialog(
+                          title: const Text('Error'),
+                          content: Text('$e'),
+                        ),
+                      );
+                    }
                   }
                 },
                 child: const Text('Sign In'),
