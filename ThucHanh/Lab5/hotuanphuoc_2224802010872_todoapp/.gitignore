@@ -43,6 +43,3 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-*.mp4
-*.webm
-ThucHanh/Lab5/nodejs_backend/node_modules
