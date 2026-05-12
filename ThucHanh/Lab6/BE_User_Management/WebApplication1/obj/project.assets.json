@@ -4436,31 +4436,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\PM\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Phuoc\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\2224802010872_14042026\\lab_flutter\\ThucHanh\\Lab6\\BE_User_Management\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "D:\\flutter_project\\ThucHanh\\Lab6\\BE_User_Management\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "D:\\2224802010872_14042026\\lab_flutter\\ThucHanh\\Lab6\\BE_User_Management\\WebApplication1\\WebApplication1.csproj",
-      "packagesPath": "C:\\Users\\PM\\.nuget\\packages\\",
-      "outputPath": "D:\\2224802010872_14042026\\lab_flutter\\ThucHanh\\Lab6\\BE_User_Management\\WebApplication1\\obj\\",
+      "projectPath": "D:\\flutter_project\\ThucHanh\\Lab6\\BE_User_Management\\WebApplication1\\WebApplication1.csproj",
+      "packagesPath": "C:\\Users\\Phuoc\\.nuget\\packages\\",
+      "outputPath": "D:\\flutter_project\\ThucHanh\\Lab6\\BE_User_Management\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\PM\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Phuoc\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4478,8 +4471,7 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.200"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -4531,7 +4523,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.420/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

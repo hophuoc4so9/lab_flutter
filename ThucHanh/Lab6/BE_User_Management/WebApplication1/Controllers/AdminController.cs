@@ -192,7 +192,9 @@ namespace WebApplication1.Controllers
                 return NotFound(new { message = "User not found."});
             }
 
-            return Ok(admin);
+            var roles = await userManager.GetRolesAsync(admin);
+
+            return Ok(new { admin.Id, admin.Email, admin.PhoneNumber, Roles = roles });
         }
 
         [HttpPut("admin-info")]

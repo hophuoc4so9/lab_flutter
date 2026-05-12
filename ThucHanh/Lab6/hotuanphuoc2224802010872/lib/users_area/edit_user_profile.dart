@@ -58,7 +58,7 @@ class _EditUserProfileState extends State<EditUserProfile> {
 
       setState(() {
         _emailController.text = user.email;
-        _phoneNumberController.text = user.phoneNumber!;
+        _phoneNumberController.text = user.phoneNumber ?? '';
       });
     } else {
       var errorBody = jsonDecode(result.body);

@@ -155,18 +155,18 @@ namespace WebApplication1.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "39828877-25ef-4aa7-851a-24b8cd176081",
+                            Id = "f966129d-d574-46fb-92de-54e544e776c8",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1bfe52f2-7e64-43bb-a39d-eff437504fe1",
+                            ConcurrencyStamp = "afa081b2-5729-449f-882b-56b3eab1e3ae",
                             Email = "freetrained@freetrained.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "FREETRAINED@FREETRAINED.COM",
                             NormalizedUserName = "FREETRAINED@FREETRAINED.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEAfZ1dtCN+WHGgtG/gKMiSrTA5UQnczjL9uis2cpxdPuUzuPXrTfFviC7w+f8YHokw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEBR5CH/PZUjyW1w3VQgDkknTYXcwl+NsiSDLcJPa+G9TyeIJyepeYgxlFfC8NWY57A==",
                             PhoneNumber = "1234567890",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "f6dd1e10-6ebc-4bb4-9056-2ade47244965",
+                            SecurityStamp = "f12e3fd9-e72c-47d3-9560-531d00df651e",
                             TwoFactorEnabled = false,
                             UserName = "freetrained@freetrained.com"
                         });
@@ -236,7 +236,7 @@ namespace WebApplication1.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "39828877-25ef-4aa7-851a-24b8cd176081",
+                            UserId = "f966129d-d574-46fb-92de-54e544e776c8",
                             RoleId = "1"
                         });
                 });

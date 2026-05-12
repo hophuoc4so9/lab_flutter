@@ -170,12 +170,12 @@ namespace WebApplication1.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "39828877-25ef-4aa7-851a-24b8cd176081", 0, "1bfe52f2-7e64-43bb-a39d-eff437504fe1", "freetrained@freetrained.com", true, false, null, "FREETRAINED@FREETRAINED.COM", "FREETRAINED@FREETRAINED.COM", "AQAAAAIAAYagAAAAEAfZ1dtCN+WHGgtG/gKMiSrTA5UQnczjL9uis2cpxdPuUzuPXrTfFviC7w+f8YHokw==", "1234567890", true, "f6dd1e10-6ebc-4bb4-9056-2ade47244965", false, "freetrained@freetrained.com" });
+                values: new object[] { "f966129d-d574-46fb-92de-54e544e776c8", 0, "afa081b2-5729-449f-882b-56b3eab1e3ae", "freetrained@freetrained.com", true, false, null, "FREETRAINED@FREETRAINED.COM", "FREETRAINED@FREETRAINED.COM", "AQAAAAIAAYagAAAAEBR5CH/PZUjyW1w3VQgDkknTYXcwl+NsiSDLcJPa+G9TyeIJyepeYgxlFfC8NWY57A==", "1234567890", true, "f12e3fd9-e72c-47d3-9560-531d00df651e", false, "freetrained@freetrained.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "1", "39828877-25ef-4aa7-851a-24b8cd176081" });
+                values: new object[] { "1", "f966129d-d574-46fb-92de-54e544e776c8" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
