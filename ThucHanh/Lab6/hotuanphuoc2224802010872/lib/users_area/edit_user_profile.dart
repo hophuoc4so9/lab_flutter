@@ -5,6 +5,7 @@ import 'package:hotuanphuoc2224802010872/constants/api_endpoints.dart';
 import 'package:hotuanphuoc2224802010872/constants/app_colors.dart';
 import 'package:hotuanphuoc2224802010872/constants/token_handler.dart';
 import 'package:hotuanphuoc2224802010872/models/user_model.dart';
+import 'package:hotuanphuoc2224802010872/services/fetch_email.dart';
 import 'package:hotuanphuoc2224802010872/services/role_check.dart';
 import 'package:hotuanphuoc2224802010872/shared/custome_appbar.dart';
 import 'package:hotuanphuoc2224802010872/shared/error_dialog.dart';
@@ -39,6 +40,7 @@ class _EditUserProfileState extends State<EditUserProfile> {
     super.initState();
     RoleCheck().checkUserRole(context);
     getAdminInfo(widget.email);
+    _emailController.text = widget.email;
   }
 
   Future<void> getAdminInfo(String email) async {

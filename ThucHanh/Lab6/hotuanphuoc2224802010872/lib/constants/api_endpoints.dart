@@ -1,5 +1,5 @@
 class ApiEndpoints {
-  static const String apiUri = "https://localhost:7293";
+  static const String apiUri = "http://localhost:5085";
   static const String login = "$apiUri/api/Account/login";
   static const String register = "$apiUri/api/Account/register"; 
   static const String adminUsersCrud = "$apiUri/api/Admin/users";
