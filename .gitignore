@@ -46,3 +46,4 @@ app.*.map.json
 *.mp4
 *.webm
 ThucHanh/Lab5/nodejs_backend/node_modules
+ThucHanh/Lab6/BE_User_Management/.vs
